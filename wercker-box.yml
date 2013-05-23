@@ -1,6 +1,6 @@
 name: empty-child
-version: 0.0.4
-inherits: wouter/empty@0.0.7
+version: 0.0.5
+inherits: wouter/empty@0.0.8
 packages :
   - ruby@6.6
   - webkitserver@6
