@@ -1,4 +1,4 @@
-name: empty-child
+#name: empty-child
 version: 0.0.6
 inherits: wouter/empty@0.0.13
 packages :
