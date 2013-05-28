@@ -1,6 +1,79 @@
 name: empty-child
-#version: 0.0.6
+version: 0.0.7
 inherits: wouter/empty@0.0.13
 packages :
   - ruby@6.6
   - webkitserver@6
+
+
+
+box-detect:
+  priority : 100
+  detect:
+    - files:
+      - Gemfile
+      
+default-wercker-yml:
+  ruby-on-rails:
+    detect:
+      - files:
+          - config
+    wercker.yml: |
+      # Specifies the box, in this case the default ruby box
+      box: wercker/ruby
+      #In services you can define services like databases and queues
+      #services:
+      #  - wercker/mysql
+      #  - wercker/postgresql
+      
+      # Build definition
+      build:
+          # The steps that will be executed on build
+          steps:
+              # A step that executes `bundle install` command
+              - bundle-install
+              # A step that prepares the database.yml with settings from the database you defined in services
+              - rails-database-yml      
+              # A custom script step, name value is used in the UI
+              # and the code value contains the command that get executed
+              - script:
+                  name: echo ruby information
+                  code: |
+                      echo "ruby version $(ruby --version) running!"
+                      echo "from location $(which ruby)"
+                      echo -p "gem list: $(gem list)"      
+              # Add more steps here:
+              # - script:
+              #        name: rspec
+              #        script: bundle exec rspec
+  ruby:
+    detect:
+      default: true
+      wercker.yml: |
+        # Specifies the box, in this case the default ruby box
+        box: wercker/ruby
+        #In services you can define services like databases and queues
+        #services:
+        #  - wercker/mysql
+        #  - wercker/postgresql
+        
+        # Build definition
+        build:
+            # The steps that will be executed on build
+            steps:
+                # A step that executes `bundle install` command
+                - bundle-install 
+        
+                # A custom script step, name value is used in the UI
+                # and the code value contains the command that get executed
+                - script:
+                    name: echo ruby information
+                    code: |
+                        echo "ruby version $(ruby --version) running!"
+                        echo "from location $(which ruby)"
+                        echo -p "gem list: $(gem list)"
+        
+                # Add more steps here:
+                # - script:
+                #        name: rspec
+                #        script: bundle exec rspec
