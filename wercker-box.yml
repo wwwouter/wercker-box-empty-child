@@ -9,24 +9,18 @@ packages :
 
 box-detect:
   priority : 100
+  version : 
   detect:
     - files:
       - Gemfile
       
-default-wercker-yml:
+default-build-steps:
   ruby-on-rails:
+    priority: 100
     detect:
       - files:
           - config
     wercker.yml: |
-      # Specifies the box, in this case the default ruby box
-      box: wercker/ruby
-      #In services you can define services like databases and queues
-      #services:
-      #  - wercker/mysql
-      #  - wercker/postgresql
-      
-      # Build definition
       build:
           # The steps that will be executed on build
           steps:
@@ -47,33 +41,27 @@ default-wercker-yml:
               #        name: rspec
               #        script: bundle exec rspec
   ruby:
+    priority : 50
     detect:
       default: true
-      wercker.yml: |
-        # Specifies the box, in this case the default ruby box
-        box: wercker/ruby
-        #In services you can define services like databases and queues
-        #services:
-        #  - wercker/mysql
-        #  - wercker/postgresql
-        
-        # Build definition
-        build:
-            # The steps that will be executed on build
-            steps:
-                # A step that executes `bundle install` command
-                - bundle-install 
-        
-                # A custom script step, name value is used in the UI
-                # and the code value contains the command that get executed
-                - script:
-                    name: echo ruby information
-                    code: |
-                        echo "ruby version $(ruby --version) running!"
-                        echo "from location $(which ruby)"
-                        echo -p "gem list: $(gem list)"
-        
-                # Add more steps here:
-                # - script:
-                #        name: rspec
-                #        script: bundle exec rspec
+    wercker.yml: |
+      # Build definition
+      build:
+        # The steps that will be executed on build
+        steps:
+          # A step that executes `bundle install` command
+          - bundle-install 
+          
+          # A custom script step, name value is used in the UI
+          # and the code value contains the command that get executed
+          - script:
+              name: echo ruby information
+              code: |
+                echo "ruby version $(ruby --version) running!"
+                echo "from location $(which ruby)"
+                echo -p "gem list: $(gem list)"
+          
+          # Add more steps here:
+          #- script:
+          #    name: rspec
+          #    script: bundle exec rspec
