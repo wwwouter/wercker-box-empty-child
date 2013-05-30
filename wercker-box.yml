@@ -1,5 +1,5 @@
 name: empty-child
-version: 0.0.10
+version: 0.0.11
 inherits: wouter/empty@0.0.13
 packages :
   - ruby@6.6
@@ -19,7 +19,7 @@ default-build:
     detect:
       - files:
           - config
-    wercker.yml: |
+    text-to-append: |
       build:
           # The steps that will be executed on build
           steps:
@@ -43,7 +43,7 @@ default-build:
     priority : 50
     detect:
       default: true
-    wercker.yml: |
+    text-to-append: |
       # Build definition
       build:
         # The steps that will be executed on build
