@@ -11,8 +11,7 @@ box-detect:
   priority : 100
   version : 
   detect:
-    - files:
-      - Gemfile
+    - default: true
       
 default-build-steps:
   ruby-on-rails:
