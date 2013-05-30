@@ -42,7 +42,7 @@ default-build:
   ruby:
     priority : 50
     detect:
-      default: true
+      - default: true
     text-to-append: |
       # Build definition
       build:
