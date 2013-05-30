@@ -1,5 +1,5 @@
 name: empty-child
-version: 0.0.8
+version: 0.0.9
 inherits: wouter/empty@0.0.13
 packages :
   - ruby@6.6
@@ -13,7 +13,7 @@ box-detect:
   detect:
     - default: true
       
-default-build-steps:
+default-build:
   ruby-on-rails:
     priority: 100
     detect:
