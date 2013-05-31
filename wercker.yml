@@ -1,2 +1,5 @@
 #comment
 box : wercker/blank
+build:
+  steps:
+    - npm-install@0.0
