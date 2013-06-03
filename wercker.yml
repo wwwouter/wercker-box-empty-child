@@ -1,2 +1,5 @@
 #comment
 box : wouter/empty
+services: 
+  - wercker/mongodb
+  - wouter/empty
