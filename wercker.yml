@@ -3,5 +3,5 @@ box : wouter/empty
 services: 
   - wercker/mongodbasdadsas
   - wouter/empty
-build
+build:
   steps
