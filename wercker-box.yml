@@ -4,7 +4,7 @@ inherits: wouter/empty@0.0.13
 packages :
   - ruby
   - webkitserver@6
-
+type: main
 
 
 box-detect:
