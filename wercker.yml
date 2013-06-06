@@ -6,7 +6,6 @@ services:
 
 build:
   steps:
-    - npm-install
     - script:
         name: apt
         code: |
