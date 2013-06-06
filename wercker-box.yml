@@ -1,3 +1,66 @@
-box : nothing
- cs
-asd
+name: empty-child
+version: 0.0.14
+inherits: wouter/empty@0.0.13
+packages :
+  - ruby
+  - webkitserver@6
+
+
+
+box-detect:
+  priority : 100
+  version : 
+  detect:
+    - default: true
+      
+default-build:
+  ruby-on-rails:
+    priority: 100
+    detect:
+      - files:
+          - config
+    text-to-append: |
+      build:
+          # The steps that will be executed on build
+          steps:
+              # A step that executes `bundle install` command
+              - bundle-install
+              # A step that prepares the database.yml with settings from the database you defined in services
+              - rails-database-yml      
+              # A custom script step, name value is used in the UI
+              # and the code value contains the command that get executed
+              - script:
+                  name: echo ruby information
+                  code: |
+                      echo "ruby version $(ruby --version) running!"
+                      echo "from location $(which ruby)"
+                      echo -p "gem list: $(gem list)"      
+              # Add more steps here:
+              # - script:
+              #        name: rspec
+              #        script: bundle exec rspec
+  ruby:
+    priority : 50
+    detect:
+      - default: true
+    text-to-append: |
+      # Build definition
+      build:
+        # The steps that will be executed on build
+        steps:
+          # A step that executes `bundle install` command
+          - bundle-install 
+          
+          # A custom script step, name value is used in the UI
+          # and the code value contains the command that get executed
+          - script:
+              name: echo ruby information
+              code: |
+                echo "ruby version $(ruby --version) running!"
+                echo "from location $(which ruby)"
+                echo -p "gem list: $(gem list)"
+          
+          # Add more steps here:
+          #- script:
+          #    name: rspec
+          #    script: bundle exec rspec
