@@ -4,3 +4,6 @@ services:
   - wercker/mongodbasdadsas
   - wouter/empty
 
+build:
+  steps:
+    - npm-install
