@@ -9,6 +9,7 @@ build:
     - script:
         name: apt
         code: |
+          echo $COLUMNS
           A1234567890B1234567890C1234567890D1234567890E1234567890F1234567890G1234567890H1234567890I123456789J01234567890
           sudo apt-get install memcached
         
