@@ -1,9 +1,5 @@
 #comment
 box : wouter/empty
-services: 
-  - wercker/mongodbasdadsas
-  - wouter/empty
-
 build:
   steps:
     - script:
