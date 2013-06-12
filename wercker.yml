@@ -7,6 +7,6 @@ build:
         code: |
           echo $WERCKER_REPORT_ARTIFECTS_DIR
           echo "number=2" > $WERCKER_REPORT_NUMBERS_FILE
-          touch $WERCKER_REPORT_ARTIFECTS_DIR\a
-          touch $WERCKER_REPORT_ARTIFECTS_DIR\b
+          touch $WERCKER_REPORT_ARTIFECTS_DIR/a
+          touch $WERCKER_REPORT_ARTIFECTS_DIR/b
         
