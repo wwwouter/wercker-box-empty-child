@@ -2,6 +2,8 @@
 box : wouter/empty
 build:
   steps:
+    - install-packages:
+        packages: npm
     - jshint-dev
     - script:
         name: apt
