@@ -11,6 +11,6 @@ build:
           echo $WERCKER_REPORT_ARTIFACTS_DIR
           echo "number=2" > $WERCKER_REPORT_NUMBERS_FILE
           touch $WERCKER_REPORT_ARTIFACTS_DIR/a
-          touch $WERCKER_REPORT_ARTIFACTS_DIR/b
+          echo "hallo" > $WERCKER_REPORT_ARTIFACTS_DIR/b
     #- jshint-dev
         
