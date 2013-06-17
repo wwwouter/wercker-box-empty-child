@@ -1,6 +1,6 @@
 #comment
-#box : wouter/empty
-box : wercker/default
+box : wouter/empty
+#box : wercker/default
 build:
   steps:
     - install-packages:
