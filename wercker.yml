@@ -1,16 +1,16 @@
 #comment
-box : wouter/empty
-#box : wercker/default
+#box : wouter/empty
+box : wercker/default
 build:
   steps:
     - install-packages:
         packages: npm
-    - jshint-dev
     - script:
         name: apt
         code: |
-          echo $WERCKER_REPORT_ARTIFECTS_DIR
+          echo $WERCKER_REPORT_ARTIFACTS_DIR
           echo "number=2" > $WERCKER_REPORT_NUMBERS_FILE
-          touch $WERCKER_REPORT_ARTIFECTS_DIR/a
-          touch $WERCKER_REPORT_ARTIFECTS_DIR/b
+          touch $WERCKER_REPORT_ARTIFACTS_DIR/a
+          touch $WERCKER_REPORT_ARTIFACTS_DIR/b
+    - jshint-dev
         
