@@ -3,8 +3,8 @@ box : wouter/empty
 #box : wercker/default
 build:
   steps:
-    - install-packages:
-        packages: npm
+    #- install-packages:
+    #    packages: npm
     - script:
         name: apt
         code: |
@@ -12,5 +12,5 @@ build:
           echo "number=2" > $WERCKER_REPORT_NUMBERS_FILE
           touch $WERCKER_REPORT_ARTIFACTS_DIR/a
           touch $WERCKER_REPORT_ARTIFACTS_DIR/b
-    - jshint-dev
+    #- jshint-dev
         
