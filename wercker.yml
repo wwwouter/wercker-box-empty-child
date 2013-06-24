@@ -8,6 +8,7 @@ build:
     - script:
         name: apt
         code: |
+          ls -a
           export
           echo $WERCKER_REPORT_ARTIFACTS_DIR
           echo "number=2" > $WERCKER_REPORT_NUMBERS_FILE
