@@ -1,18 +1,18 @@
 #comment
-box : wouter/empty
-#box : wercker/default
-build:
-  steps:
- #   - install-packages:
-  #      packages: npm
-    - script:
-        name: apt
-        code: |
-          ls -a
-          export
-          echo $WERCKER_REPORT_ARTIFACTS_DIR
-          echo "number=2" > $WERCKER_REPORT_NUMBERS_FILE
-          touch $WERCKER_REPORT_ARTIFACTS_DIR/a
-          echo "hallo" > $WERCKER_REPORT_ARTIFACTS_DIR/b
-  #  - jshint-dev
+# box : wouter/empty
+box : wercker/default
+# build:
+#   steps:
+# #   - install-packages:
+#   #      packages: npm
+#     - script:
+#         name: apt
+#         code: |
+#           ls -a
+#           export
+#           echo $WERCKER_REPORT_ARTIFACTS_DIR
+#           echo "number=2" > $WERCKER_REPORT_NUMBERS_FILE
+#           touch $WERCKER_REPORT_ARTIFACTS_DIR/a
+#           echo "hallo" > $WERCKER_REPORT_ARTIFACTS_DIR/b
+#   #  - jshint-dev
         
