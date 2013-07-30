@@ -1,10 +1,12 @@
 name: empty-child
 version: 0.0.17
-inherits: wouter/empty@0.0.13
+inherits: wouter/empty@0.0.16
 packages :
   - ruby
   - webkitserver@6
 type: main
+env:
+  IETS: andere waarde child
 
 
 box-detect:
