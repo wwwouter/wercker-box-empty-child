@@ -1,5 +1,5 @@
 name: empty-child
-version: 0.0.18
+version: 0.0.19
 inherits: wouter/empty@0.0.16
 packages :
   - ruby
